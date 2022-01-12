@@ -66,11 +66,14 @@ function App() {
       <div className="app">
         {showScore ? (
           <div className='score-section'>
-            You scored {score} out of {questions.length}
+            You scored {score} out of the {questions.length}
+            <button id="returnbutton"><a href="http://localhost:3000/">Play Again</a></button>
           </div>
+          
         )
           :
           (
+           
             <>
               <div className='question-section'>
                 <div className='question-count'>
@@ -80,11 +83,10 @@ function App() {
                   {questions[currentQuestion].questionText}
                 </div>
               </div>
-
               <div className='answer-section'>
                 {
                   questions[currentQuestion].answerOptions.map((answerOptions) => (
-                    <button onClick={() => handleAnswerButtonClick(answerOptions.isCorrect)}>{answerOptions.answerText}</button>
+                    <button className='button' onClick={() => handleAnswerButtonClick(answerOptions.isCorrect)}><span>{answerOptions.answerText}</span></button>
                   ))
                 }
               </div>

@@ -60,6 +60,8 @@ function App() {
 
   return (
     <>
+      <h1 className='mainheading'>Welcome</h1>
+      <h1 className='mainheading2'>QuizMate</h1>
       <h1 className='header'>Quiz</h1>
       <div className="app">
         {showScore ? (

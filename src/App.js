@@ -4,12 +4,12 @@ function App() {
 
   const questions = [
     {
-      questionText: 'Who is Prime Minister of India?',
+      questionText: ' What is the extension of java code  ?',
       answerOptions: [
-        { answerText: 'Vijay Rupani', isCorrect: false },
-        { answerText: 'Manmohan singh', isCorrect: false },
-        { answerText: 'Narendra Modi', isCorrect: true },
-        { answerText: 'Deep Patel', isCorrect: false },
+        { answerText: 'Dynamic', isCorrect: false },
+        { answerText: 'Architecture', isCorrect: false },
+        { answerText: 'Use of Pointers', isCorrect: true },
+        { answerText: 'Object Oriented', isCorrect: false },
       ],
     },
     {
@@ -60,10 +60,15 @@ function App() {
 
   return (
     <>
+      <div id="headings">
       <h1 className='mainheading'>Welcome</h1>
+      </div>
+      <div id="headings2">
       <h1 className='mainheading2'>QuizMate</h1>
+      </div>
       <h1 className='header'>Quiz</h1>
       <div className="app">
+      
         {showScore ? (
           <div className='score-section'>
             You scored {score} out of the {questions.length}

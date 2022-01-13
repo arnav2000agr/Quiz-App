@@ -126,7 +126,7 @@ function App() {
         {showScore ? (
           <div className='score-section'>
             You scored {score} out of the {questions.length}
-            <button id="returnbutton"><a href="http://localhost:3000/">Play Again</a></button>
+            <button id="returnbutton"><a href="https://blissful-neumann-e45a1a.netlify.app/">Play Again</a></button>
           </div>
           
         )

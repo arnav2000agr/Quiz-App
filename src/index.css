@@ -11,8 +11,10 @@ body {
 }
 
 body {
-  background: url("bg5.jpg");
-  font-family: "Bree Serif", serif;
+  background: url("bg5.jpg"),url("wall2.png");
+  background-color:rgba(14, 0, 14, 0);
+  background-blend-mode:exclusion;
+  font-family:"Bree Serif", serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,7 +78,7 @@ body {
 }
 
 .app {
-  /* background: linear-gradient(5deg, #ff961d 0%, #f71aa2 100%); */
+  
   background: #000000;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -131,13 +133,9 @@ body {
 .button {
   width: 100%;
   font-size: 16px;
-  color: #ffffff;
-  /* background: linear-gradient( #ff961d 0%, #f71aa2 100%); */
+  color: white;
   
-  /* background: linear-gradient(#603813 0%, #b29f94  51%, #603813  100%); */
-
-  background: linear-gradient(#8a0303 0%, #190A05  51%, #870000  100%);
-
+  background: linear-gradient( #b92b27, #1565c0);
   border-radius: 15px;
   display: flex;
   padding: 5px;
@@ -148,8 +146,8 @@ body {
 }
 
 .button:hover {
-  box-shadow: 1px 2px 0 red;
-  color: black;
+  box-shadow: 1px 1px 0 rgb(1, 173, 253);
+  background: linear-gradient( #009fff, #ec2f4b); 
 
 }
 
@@ -165,7 +163,8 @@ button:svg {
   cursor:pointer;
   align-items: left;
   display: flex;
-  background:#000000;
+  background: linear-gradient(#0f0c29, #302b63, #24243e);
+  
   width:fit-content;
   margin-top: auto;
   transition-duration: 0.4s;
@@ -176,7 +175,9 @@ button:svg {
   
 }
 #returnbutton:hover{
-  box-shadow: 1px 1px 0 red;
+  box-shadow: 0.5px 0.5px 0 blue;
+  background: linear-gradient( #0f0c29, #231996);
+ 
 }
 #headings{
   background: linear-gradient( #b92b27, #1565c0);
@@ -194,6 +195,3 @@ button:svg {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-
-
-

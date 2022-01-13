@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@500&display=swap");
 
 body {
-  margin: 0;
+  margin: 0 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,21 +11,79 @@ body {
 }
 
 body {
-  background: url("http://superdevresources.com/wp-content/uploads/2014/02/pattern-background.png");
+  background: url("bg5.jpg");
   font-family: "Bree Serif", serif;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
+.mainheading{
+  /* text-align: center; */
+  color:black;
+  animation: 2s infinite normal slidein;
+  font-weight: bold;
+  font-family: helvetica;
+  font-size:45px;
+  display:flex;
+  margin:0%;
+  /* position: relative; */
+  /* overflow: hidden; */
+}
+@keyframes slidein {
+  from {
+    margin-right: 0%;
+    width:fit-content;
+  }
+
+  to {
+    margin-left:auto;
+    width:fit-content;
+  }
+}
+
+.mainheading2{
+  
+  color:black;
+  animation: 2s infinite normal slidein2;
+  font-weight: bold;
+  font-family: helvetica;
+  font-size:45px;
+  display:flex;
+  margin: 0%;
+  
+  
+  position: relative;
+  /* overflow: hidden; */
+  padding: 0%;
+}
+@keyframes slidein2 {
+  from {
+    margin-left: auto;
+    width: fit-content;
+  }
+
+  to {
+    margin-right: 0%;
+    width:fit-content;
+  }
+}
+
 
 .header{
   text-align: center;
-  color: #f71aa2;
+  color: black;
 }
 
 .app {
-  background: linear-gradient(5deg, #ff961d 0%, #f71aa2 100%);
+  /* background: linear-gradient(5deg, #ff961d 0%, #f71aa2 100%); */
+  background: #000000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  
+
+
   width: 95%;
   min-height: 200px;
   height: min-content;
@@ -49,6 +107,7 @@ body {
 }
 
 .question-count {
+  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -69,11 +128,16 @@ body {
   justify-content: space-between;
 }
 
-button {
+.button {
   width: 100%;
   font-size: 16px;
   color: #ffffff;
-  background: linear-gradient( #ff961d 0%, #f71aa2 100%);
+  /* background: linear-gradient( #ff961d 0%, #f71aa2 100%); */
+  
+  /* background: linear-gradient(#603813 0%, #b29f94  51%, #603813  100%); */
+
+  background: linear-gradient(#8a0303 0%, #190A05  51%, #870000  100%);
+
   border-radius: 15px;
   display: flex;
   padding: 5px;
@@ -83,15 +147,53 @@ button {
   cursor: pointer;
 }
 
+.button:hover {
+  box-shadow: 1px 2px 0 red;
+  color: black;
 
-button:hover {
-  background-color: #1b295c;
 }
 
 button:focus {
   outline: none;
 }
 
-button svg {
+button:svg {
   margin-right: 5px;
 }
+#returnbutton{
+  background:#ffffff;
+  cursor:pointer;
+  align-items: left;
+  display: flex;
+  background:#000000;
+  width:fit-content;
+  margin-top: auto;
+  transition-duration: 0.4s;
+  padding:3px;
+  border:3px solid black;
+  border-radius: 10px;
+  
+  
+}
+#returnbutton:hover{
+  box-shadow: 1px 1px 0 red;
+}
+#headings{
+  background: linear-gradient( #b92b27, #1565c0);
+  display:flex;
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+} 
+ #headings2{
+  background: linear-gradient(  #1565c0 ,#b92b27);
+  display:flex;
+  position: relative;
+  overflow: hidden;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+
+

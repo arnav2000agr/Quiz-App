@@ -103,6 +103,7 @@ function App() {
   const [currentQuestion, setCurrentQuestion] = useState(-1)
   const [showScore, setShowScore] = useState(false)
   const [score, setScore] = useState(0)
+  
   const handleAnswerButtonClick = (isCorrect) => {
     if (isCorrect === true) {
       setScore(score + 1);
@@ -122,8 +123,8 @@ function App() {
     <>
       <div className='logocontainer'>
       
-        <img src={logo} alt="Java Logo" id="logo" width="50" height="50"/>
-        <h3 className='header'>Java Quiz</h3>
+        <img src={logo} alt="Java Logo" id="logo" width="90" height="90"/>
+        
       </div>
      
       <div id="headings">
@@ -139,7 +140,7 @@ function App() {
         {showScore ? (
           <div className='score-section'>
             You scored {score} out of the {questions.length}
-            <button class="returnbutton"><a href="https://blissful-neumann-e45a1a.netlify.app/">Play Again</a></button>
+            <button id="returnbutton"><a href="https://blissful-neumann-e45a1a.netlify.app/">Play Again</a></button>
           </div>
           
         )
@@ -178,8 +179,7 @@ function App() {
                 </div>
                 <div className='question-text'>
                   {questions[currentQuestion].questionText}
-                </div>            
-              
+                </div>             
               </div>
               <div className='answer-section'>
                 {

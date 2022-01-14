@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+import logo from './Java Logo.png';
+
+
 
 function App() {
-
+  
   const questions = [
+    
     {
       questionText: 'Which of the following is not a Java features?',
       answerOptions: [
@@ -94,8 +98,9 @@ function App() {
       ],
     }
   ]
+  
 
-  const [currentQuestion, setCurrentQuestion] = useState(0)
+  const [currentQuestion, setCurrentQuestion] = useState(-1)
   const [showScore, setShowScore] = useState(false)
   const [score, setScore] = useState(0)
   const handleAnswerButtonClick = (isCorrect) => {
@@ -103,30 +108,38 @@ function App() {
       setScore(score + 1);
     }
 
-    const nextQuetions = currentQuestion + 1;
-    if (nextQuetions < questions.length) {
-      setCurrentQuestion(nextQuetions);
+    const nextQs = currentQuestion + 1;
+    if (nextQs < questions.length) {
+      setCurrentQuestion(nextQs);
     }
     else {
       setShowScore(true)
     }
   }
+  
 
   return (
     <>
+      <div className='logocontainer'>
+      
+        <img src={logo} alt="Java Logo" id="logo" width="50" height="50"/>
+        <h3 className='header'>Java Quiz</h3>
+      </div>
+     
       <div id="headings">
       <h1 className='mainheading'>Welcome</h1>
       </div>
       <div id="headings2">
       <h1 className='mainheading2'>QuizMate</h1>
       </div>
-      <h1 className='header'>Java Quiz</h1>
+      
+      
       <div className="app">
       
         {showScore ? (
           <div className='score-section'>
             You scored {score} out of the {questions.length}
-            <button id="returnbutton"><a href="https://blissful-neumann-e45a1a.netlify.app/">Play Again</a></button>
+            <button class="returnbutton"><a href="https://blissful-neumann-e45a1a.netlify.app/">Play Again</a></button>
           </div>
           
         )
@@ -134,13 +147,39 @@ function App() {
           (
            
             <>
+              {(currentQuestion===-1) ?
+               (
+                 <div>
+                     <h3>
+                       The Instructions are as follows:<br></br>
+                     </h3>
+                     <h4>
+                       * The quiz contains questions related to <i><u>Java</u></i> only.
+                     </h4>
+                     <h4>
+                       * The quiz contains 10 questions of 1 mark each.
+                     </h4>
+                     <h4>
+                       * You will be awarded 1 mark for correct answer.
+                     </h4>
+                     <h4>
+                       * No negative marks for wrong answers.
+                     </h4>
+                    <div class="proceedbutton">
+                     <button id="proceed"  onClick={()=>handleAnswerButtonClick(true)}>Proceed</button>
+                    </div>
+                 </div>)
+                 :
+                 (
+                <>
               <div className='question-section'>
                 <div className='question-count'>
                   <span>Question {currentQuestion + 1}</span>/{questions.length}
                 </div>
                 <div className='question-text'>
                   {questions[currentQuestion].questionText}
-                </div>
+                </div>            
+              
               </div>
               <div className='answer-section'>
                 {
@@ -149,6 +188,7 @@ function App() {
                   ))
                 }
               </div>
+              </>)}
             </>
           )}
       </div>

@@ -102,8 +102,44 @@ function App() {
 
   const [currentQuestion, setCurrentQuestion] = useState(-1)
   const [showScore, setShowScore] = useState(false)
-  const [score, setScore] = useState(0)
-  
+  const [score, setScore] = useState(-1)
+  const handleprev = (isCorrect) => {
+    if(isCorrect===true)
+    {
+      
+      if(currentQuestion>=1)
+      {
+        if(score<=0){
+          alert("You lost Try Again!!");
+          setShowScore(true);
+        }
+        else{
+        alert("One Mark has been deducted");
+        const prev=currentQuestion -1;
+        setCurrentQuestion(prev);
+        setScore(score-1);
+        }
+      }
+      else
+      {
+        alert("Sorry Not Possible!!");
+      }
+    }
+  }
+  const handlenext = (isCorrect) => {
+    if(isCorrect===true)
+    {
+      if(currentQuestion===questions.length-1)
+      {
+        alert("It's the last question!");
+        setShowScore(true);  
+      }
+      else{
+        const next=currentQuestion+1;
+        setCurrentQuestion(next);
+      }
+    }
+  }
   const handleAnswerButtonClick = (isCorrect) => {
     if (isCorrect === true) {
       setScore(score + 1);
@@ -161,13 +197,16 @@ function App() {
                        * The quiz contains 10 questions of 1 mark each.
                      </h4>
                      <h4>
-                       * You will be awarded 1 mark for correct answer.
+                       * You will be awarded 1 mark for each correct answer.
                      </h4>
                      <h4>
                        * No negative marks for wrong answers.
                      </h4>
+                     <h4>
+                       * The previous button will cost you 1 mark everytime.
+                     </h4>
                     <div class="proceedbutton">
-                     <button id="proceed"  onClick={()=>handleAnswerButtonClick(true)}>Proceed</button>
+                     <button id="proceed"  onClick={()=>handleAnswerButtonClick(true)}><span>Proceed</span></button>
                     </div>
                  </div>)
                  :
@@ -179,7 +218,17 @@ function App() {
                 </div>
                 <div className='question-text'>
                   {questions[currentQuestion].questionText}
-                </div>             
+                </div>            
+                <div>
+                  <button class="prevbutton" onClick={() => handleprev(true)}>Previous</button>
+                </div>
+                <div>
+                <br>
+                  
+                </br>
+                  <button class="prevbutton" onClick={() => handlenext(true)}>Next</button>
+                </div>
+                
               </div>
               <div className='answer-section'>
                 {

@@ -19,6 +19,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 90vh;
+  overflow: hidden;
 }
 .mainheading{
   /* text-align: center; */
@@ -83,6 +84,7 @@ body {
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: space-evenly;
+  overflow: hidden;
 }
 
 .score-section {
@@ -90,6 +92,7 @@ body {
   font-size: 24px;
   align-items: center;
 }
+
 
 .question-section {
   width: 100%;
@@ -104,19 +107,26 @@ body {
 .question-count span {
   font-size: 28px;
 }
+
 .question-text {
   margin-bottom: 12px;
+  padding-bottom: 15px;
 }
+
+
+
 .answer-section {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 .button {
   width: 100%;
   font-size: 16px;
-  color: white; 
+  color: white;
+  
   background: linear-gradient( #b92b27, #1565c0);
   border-radius: 15px;
   display: flex;
@@ -126,36 +136,50 @@ body {
   border: 3px solid #234668;
   cursor: pointer;
 }
+
 .button:hover {
-  box-shadow: 1px 1px 0 rgb(1, 173, 253);
   background: linear-gradient( #009fff, #ec2f4b); 
+
 }
+
 button:focus {
   outline: none;
 }
+
 button:svg {
   margin-right: 5px;
 }
 #returnbutton{
   cursor:pointer;
+  font-size: 15px;
   display: flex;
   background: linear-gradient(#0f0c29, #302b63, #24243e);
+  
   width:fit-content;
   margin-top: auto;
-  transition-duration: 0.4s;
+ 
   padding:3px;
-  border:3px solid black;
-  border-radius: 10px;  
+  
+  border-radius: 10px;
+  box-shadow: 0 2px rgba(179, 174, 174, 0.219);
+  
 }
-#returnbutton:hover{
-  box-shadow: 0.5px 0.5px 0 blue;
-  background: linear-gradient( #0f0c29, #231996); 
+#returnbutton:hover {
+  background: linear-gradient( #0f0c29, #231996);
 }
+
+#returnbutton:active {
+  
+  box-shadow: 0 2px rgba(179, 174, 174, 0.219);
+  transform: translateY(2px);
+}
+
 #headings{
   background: linear-gradient( #b92b27, #1565c0);
   display:flex;
   position: relative;
-  overflow: hidden;  
+  overflow: hidden;
+  
 } 
  #headings2{
   background: linear-gradient(  #1565c0 ,#b92b27);
@@ -171,26 +195,60 @@ button:svg {
   padding-top: 0px;
   padding-bottom: 1.5rem;
  text-align: center;
+
  border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
 #logo{
   padding-left: 5px;
-  padding-top: 5px; 
+  padding-top: 5px;
+  
 }
 .proceedbutton{
  text-align: center;
+
 }
 #proceed{
   font-family:'Segoe UI';
   font-size: larger;
+  
   cursor:pointer;
   background: linear-gradient(#0f0c29, #302b63, #24243e);
   padding:3px;
   border:3px solid rgba(0, 0, 0, 0.61);
-  border-radius: 10px; 
+  border-radius: 10px;
+  box-shadow: 0 2px rgba(179, 174, 174, 0.219); 
+  
 }
-#proceed:hover{
-  box-shadow: 0.5px 0.5px 0 blue;
+#proceed:hover {
   background: linear-gradient( #0f0c29, #231996);
+}
+
+#proceed:active {
+  
+  box-shadow: 0 2px rgba(179, 174, 174, 0.219);
+  transform: translateY(2px);
+}
+
+
+.prevbutton {
+  margin-top: auto;
+  font-size: 15px;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background: linear-gradient( #ec2f4b,#009fff);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 2px rgba(179, 174, 174, 0.219);
+}
+
+.prevbutton:hover {
+  background: linear-gradient(#009fff, #ec2f4b);
+}
+
+.prevbutton:active {
+  
+  box-shadow: 0 2px rgba(179, 174, 174, 0.219);
+  transform: translateY(2px);
 }

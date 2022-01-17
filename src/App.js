@@ -99,6 +99,49 @@ function App() {
     }
   ]
   
+  const NO_OF_HIGH_SCORES = 10;
+const HIGH_SCORES = 'highScores';
+function saveHighScore(score, highScores) {
+  const name = prompt('You got a highscore! Enter name:');
+  const newScore = { score, name };
+  
+  
+  highScores.push(newScore);
+
+  
+  highScores.sort((a, b) => b.score - a.score);
+  
+ 
+  highScores.splice(NO_OF_HIGH_SCORES);
+  
+  
+  localStorage.setItem(HIGH_SCORES, JSON.stringify(highScores));
+  
+};
+
+function checkHighScore(score) {
+  const highScores = JSON.parse(localStorage.getItem(HIGH_SCORES)) ?? [];
+  
+  if(score>0){
+ 
+    saveHighScore(score, highScores); 
+     
+  }
+  
+}
+function disp()
+{
+  const highScores = JSON.parse(localStorage.getItem(HIGH_SCORES)) ?? [];
+ 
+      const highscorelist=highScores.map((score) => 
+  `${score.score} : ${score.name}`)
+  if(highscorelist[0]===undefined)
+  alert("Sorry no score exists!!")
+  else
+  alert("The highest score for this session is :\n"+highscorelist[0]);
+  
+}
+
 
   const [currentQuestion, setCurrentQuestion] = useState(-1)
   const [showScore, setShowScore] = useState(false)
@@ -150,6 +193,7 @@ function App() {
       setCurrentQuestion(nextQs);
     }
     else {
+      checkHighScore(score);
       setShowScore(true)
     }
   }
@@ -172,12 +216,16 @@ function App() {
       
       
       <div className="app">
+      {}
       
         {showScore ? (
-          <div className='score-section'>
+          
+            
+            <div className='score-section'>
             You scored {score} out of the {questions.length}
             <button id="returnbutton"><a href="https://blissful-neumann-e45a1a.netlify.app/">Play Again</a></button>
-          </div>
+            <button id="returnbutton" onClick={()=> disp()}>High Score</button>
+          </div>          
           
         )
           :
